@@ -2,13 +2,116 @@
 <html>
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" charset="utf-8">
-    <title></title>
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.min.css" />
+    <title>StoryBuilder</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.min.css"/>
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <style>
+        .titleArea {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            width: 935;
+        }
+
+        .pagesArea {
+            position: absolute;
+            top: 60px;
+            left: 15px;
+            width: 180px;
+        }
+
+        .storyArea {
+            position: absolute;
+            top: 60px;
+            left: 230px;
+            width: 720px;
+            border: solid #ccc 1px;
+            border-radius: 5px;
+            padding: 15px;
+        }
+
+        .pageButton {
+            width: 100%;
+            margin-bottom: 5px;
+            position: relative;
+        }
+
+        .storyText {
+            width: 710px;
+            height: 500px;
+
+        }
+
+        .actionButton {
+            position: absolute;
+            top: 15px;
+            left: 880px;
+        }
+
+        .pageMoveButtons {
+            position: absolute;
+            top: 2px;
+            right: 2px;
+            display: none;
+        }
+
+        .pageButton:hover .pageMoveButtons {
+            display: block;
+        }
+
+        textarea {
+            resize: none;
+        }
+
+    </style>
 </head>
 <body>
+<div class='titleArea'><h1>StoryBuilder</h1></div>
+<div class="btn-group actionButton">
+    <button class="btn"><i class="icon-cog"></i> Action</button>
+    <button class="btn dropdown-toggle" data-toggle="dropdown">
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+        <li><a href="#">New Page</a></li>
+        <li><a href="#">Delete Page</a></li>
+        <li><a href="#">Add Action</a></li>
+        <li><a href="#">Save</a></li>
+    </ul>
+</div>
+<div class='pagesArea'>
+    <div class='btn pageButton'>Title
+        <div class="pageMoveButtons">
+            <button class="btn btn-mini pageMoveButton"><i class="icon-arrow-down"></i></button>
+            <button class="btn btn-mini pageMoveButton"><i class="icon-arrow-up"></i></button>
+        </div>
+    </div>
+    <div class='btn pageButton'>Page 1
+        <div class="pageMoveButtons">
+            <button class="btn btn-mini pageMoveButton"><i class="icon-arrow-down"></i></button>
+            <button class="btn btn-mini pageMoveButton"><i class="icon-arrow-up"></i></button>
+        </div>
+    </div>
+    <div class='btn pageButton'>Page 2
+        <div class="pageMoveButtons">
+            <button class="btn btn-mini pageMoveButton"><i class="icon-arrow-down"></i></button>
+            <button class="btn btn-mini pageMoveButton"><i class="icon-arrow-up"></i></button>
+        </div>
+    </div>
+</div>
+<div class='storyArea'>
+    <textarea class="storyText" noresize>Once upon a time</textarea>
 
+    <div>
+        <form class="well form-inline actionItemArea">
+            <label>Page:&nbsp;</label> <input type="text" class="span2"/><label>&nbsp;&nbsp;Text:&nbsp;</label> <input
+                type="text" class="span4"/>&nbsp;
+            <button class="btn btn-small actionDeleteButton"><i class="icon-remove"></i></button>
+            <br>
+        </form>
+    </div>
+</div>
 </body>
 </html>
